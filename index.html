@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pakistan Currency Converter</title>
+    <link href="style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="converter-card">
+            <div class="header">
+                <img src="https://flagsapi.com/PK/flat/64.png" alt="Pakistan Flag" class="flag">
+                <h1>Pakistan Currency Converter</h1>
+                <div class="last-updated" id="lastUpdated"></div>
+            </div>
+            
+            <form>
+                <div class="amount">
+                    <label>Amount</label>
+                    <div class="input-group">
+                        <input type="number" value="1" min="0" step="0.01" class="amount-input" id="amountInput" />
+                        <span class="currency-symbol" id="currencySymbol">$</span>
+                    </div>
+                </div>
+                
+                <div class="conversion-area">
+                    <div class="currency-selector from-currency">
+                        <label>From</label>
+                        <div class="select-container">
+                            <div class="flag-container">
+                                <img src="https://flagsapi.com/US/flat/64.png" alt="From currency flag" class="flag" id="fromFlag" />
+                                <div class="country-name" id="fromCountry">United States</div>
+                            </div>
+                            <select name="from" class="currency-select" id="fromCurrency">
+                                <!-- Options populated by JavaScript -->
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <button type="button" class="swap-btn" id="swapBtn">
+                        <i class="fas fa-exchange-alt"></i>
+                    </button>
+                    
+                    <div class="currency-selector to-currency">
+                        <label>To</label>
+                        <div class="select-container">
+                            <div class="flag-container">
+                                <img src="https://flagsapi.com/PK/flat/64.png" alt="To currency flag" class="flag" id="toFlag" />
+                                <div class="country-name" id="toCountry">Pakistan</div>
+                            </div>
+                            <select name="to" class="currency-select" id="toCurrency">
+                                <!-- Options populated by JavaScript -->
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="result-container">
+                    <div class="rate-info" id="rateInfo">
+                        1 <span id="fromCurrencyCode">USD</span> = <span id="exchangeRate">0.00</span> <span id="toCurrencyCode">PKR</span>
+                    </div>
+                    <div class="final-amount-container">
+                        <div class="final-amount" id="finalAmount">
+                            <span class="symbol">₨</span>
+                            <span class="amount">0.00</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <button type="button" class="convert-btn" id="convertBtn">
+                    <i class="fas fa-exchange-alt"></i> Convert Now
+                </button>
+            </form>
+            
+            <div class="footer">
+                <div class="disclaimer">
+                    <i class="fas fa-info-circle"></i> Rates update when currency changes
+                </div>
+                <div class="credit">Developed by Asim Raza</div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
